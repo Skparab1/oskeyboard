@@ -274,6 +274,7 @@ var rerender = true;
 var rendertimer = 0;
 var capslock = false;
 var shift = false;
+var backspacer = 0;
 
 // this one is the recursive one
 function draw() {
@@ -287,6 +288,14 @@ function draw() {
   rendertimer += 1;
   t += 0.001; // this was used to shrink the keyboard so that i can see that it maintains its proportion
   // its practically useless now, except for demos
+  
+  if (keyIsDown(BACKSPACE) || keyIsDown(DELETE)){ // stimulates sticky keys for backspace
+    backspacer += 1;
+    if (backspacer % 10 == 0){ // has a wait time of 1/6 sec
+      keyCode = BACKSPACE;
+      keyReleased();
+    }
+  }
 }
 
 function mousePressed(){ // makes it rerender and hands off the coordinates to the keypress stimulator
