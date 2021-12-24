@@ -101,7 +101,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   rect(100+(50*keysize)+xdiff,(960-846)*keysize+846+ydiff,130*keysize,85*keysize);
   
   // setting up the start position
-  rectx = 100+(100*keysize);
+  rectx = 100+(100*keysize)+(115*keysize)+(20*keysize);
   buttonnum = 1;
   
   // render the asdf row
@@ -125,7 +125,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   }
  
   // the capslock var setting and mod
-  if (clickedpos[0] > 100+(50*keysize)+xdiff && clickedpos[0] < 100+(50*keysize)+xdiff+(270*keysize) && clickedpos[1] > (1060-846)*keysize+846+ydiff && clickedpos[1] < (1060-846)*keysize+846+ydiff+(85*keysize)){
+  if (clickedpos[0] > 100+(50*keysize)+xdiff && clickedpos[0] < 100+(50*keysize)+xdiff+(210*keysize) && clickedpos[1] > (1160-846)*keysize+846+ydiff && clickedpos[1] < (1160-846)*keysize+846+ydiff+(85*keysize)){
     capslock = !capslock;
   }
   // light up effect
@@ -137,10 +137,10 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     fill(0);
   }
   // render capslock key
-  rect(100+(50*keysize)+xdiff,(1060-846)*keysize+846+ydiff,270*keysize,85*keysize);
+  rect(100+(50*keysize)+xdiff,(1160-846)*keysize+846+ydiff,210*keysize,85*keysize);
   
   // shift button logistics
-  if (clickedpos[0] > 100+(50*keysize)+xdiff && clickedpos[0] < 100+(50*keysize)+xdiff+(270*keysize) && clickedpos[1] > (1160-846)*keysize+846+ydiff && clickedpos[1] < (1160-846)*keysize+846+ydiff+(85*keysize)){
+  if (clickedpos[0] > 100+(50*keysize)+xdiff && clickedpos[0] < 100+(50*keysize)+xdiff+(270*keysize) && clickedpos[1] > (1060-846)*keysize+846+ydiff && clickedpos[1] < (1060-846)*keysize+846+ydiff+(85*keysize)){
     shift = !shift;
   }
   // lightup and clear other lightups
@@ -152,7 +152,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     fill(0);
   }
   // render
-  rect(100+(50*keysize)+xdiff,(1160-846)*keysize+846+ydiff,(170+115)*keysize,85*keysize);
+  rect(100+(50*keysize)+xdiff,(1060-846)*keysize+846+ydiff,170*keysize,85*keysize);
   
   // the enter key stuff
   // stimulate the key press
@@ -175,7 +175,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   // 3. make repo public
   
   // set starting x position
-  rectx = 100+(235*keysize)+(115*keysize);
+  rectx = 100+(235*keysize)+(40*keysize);
   buttonnum = 1;
   
   // render zxcvb row and space key
@@ -232,9 +232,12 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   textSize(70*keysize);
   text('~    1    2    3    4    5    6    7    8    9    0    (     )    Backspace',100+xdiff+(52*keysize),(925-846)*keysize+846+ydiff);
   textSize(65*keysize);
-  text(' Tab  Q    W    E    R    T    Y    U    I    O    P    ;     :      Hide keys ',100+xdiff+(43*keysize),(1025-846)*keysize+846+ydiff);
-  text(' CapsLok  A    S    D    F    G    H    J    K    L    .       ,      Enter ',100+xdiff+(43*keysize), (1125-846)*keysize+846+ydiff);
-  text(' Shift          Z    X    C    V    B    N    M    !    ?    @    &      SPACE',100+xdiff+(43*keysize), (1225-846)*keysize+846+ydiff);
+  text(' Tab   Q   W    E    R    T    Y    U    I    O    P    ;     :      Hide keys ',100+xdiff+(43*keysize),(1025-846)*keysize+846+ydiff);
+  text(' Shift    A    S    D    F    G    H    J    K    L    .       ,      Enter ',100+xdiff+(43*keysize), (1125-846)*keysize+846+ydiff);
+  textSize(40*keysize);
+  text('  Caps Lock',100+xdiff+(43*keysize), (1225-846)*keysize+846+ydiff);
+  textSize(65*keysize);
+  text('              Z    X    C    V    B    N    M    !    ?    @    &      SPACE',100+xdiff+(43*keysize), (1225-846)*keysize+846+ydiff);
   
   // reset the clickedpos (because you don't want it to keep adding characters to the sting after its clicked
   clickedpos = [0,0];
