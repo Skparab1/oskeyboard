@@ -85,6 +85,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   if (clickedpos[0] > rectx+xdiff && clickedpos[0] < rectx+xdiff+(330*keysize) && clickedpos[1] > (960-846)*keysize+846+ydiff && clickedpos[1] < (960-846)*keysize+846+ydiff+(85*keysize)){
     // hide keys operation
   }
+  fill(0);
   rect(rectx+xdiff,(960-846)*keysize+846+ydiff,330*keysize,85*keysize);
   
   // the tab key
@@ -151,7 +152,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     fill(0);
   }
   // render
-  rect(100+(50*keysize)+xdiff,(1160-846)*keysize+846+ydiff,170*keysize,85*keysize);
+  rect(100+(50*keysize)+xdiff,(1160-846)*keysize+846+ydiff,(170+115)*keysize,85*keysize);
   
   // the enter key stuff
   // stimulate the key press
@@ -168,12 +169,17 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   // render key
   rect(rectx+xdiff,(1060-846)*keysize+846+ydiff,315*keysize,85*keysize);
   
+  // do tomorrow:
+  // 1. reposition spacebar and add more keys
+  // 2. add oskeyboard to private redirect
+  // 3. make repo public
+  
   // set starting x position
-  rectx = 100+(235*keysize);
+  rectx = 100+(235*keysize)+(115*keysize);
   buttonnum = 1;
   
   // render zxcvb row and space key
-  while (rectx <= 100+(1490*keysize)){
+  while (rectx <= 100+(1490*keysize)+(115*keysize)){
     // the light up effect
     if (((buttonnum == 1 && key == 'z')||(buttonnum == 2 && key == 'x')||(buttonnum == 3 && key == 'c')||(buttonnum == 4 && key == 'v')||(buttonnum == 5 && key == 'b')||(buttonnum == 6 && key == 'n')||(buttonnum == 7 && key == 'm')||(buttonnum == 8 && key == '!')||(buttonnum == 9 && key == '?')||(buttonnum == 10 && key == '@')||(buttonnum == 11 && key == '&')) && (lightup == 'on')){      fill(200,100,0);
       fill(200,100,0);
@@ -204,7 +210,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     fill(0);
   }
   // render key wait which key the space key oh ok
-  rect(rectx+xdiff,(1160-846)*keysize+846+ydiff,400*keysize,85*keysize);
+  rect(100+(50*keysize)+xdiff,(1260-846)*keysize+846+ydiff,515*keysize,85*keysize);
   
   //wrapping text
   let wrappedText = textWrap(50,typed, false); //theoretically making that false a true would cut the text wrap at spaces but that doesn't work right now
@@ -228,7 +234,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   textSize(65*keysize);
   text(' Tab  Q    W    E    R    T    Y    U    I    O    P    ;     :      Hide keys ',100+xdiff+(43*keysize),(1025-846)*keysize+846+ydiff);
   text(' CapsLok  A    S    D    F    G    H    J    K    L    .       ,      Enter ',100+xdiff+(43*keysize), (1125-846)*keysize+846+ydiff);
-  text(' Shift    Z    X    C    V    B    N    M    !    ?    @    &      SPACE',100+xdiff+(43*keysize), (1225-846)*keysize+846+ydiff);
+  text(' Shift          Z    X    C    V    B    N    M    !    ?    @    &      SPACE',100+xdiff+(43*keysize), (1225-846)*keysize+846+ydiff);
   
   // reset the clickedpos (because you don't want it to keep adding characters to the sting after its clicked
   clickedpos = [0,0];
@@ -280,7 +286,7 @@ var backspacer = 0;
 function draw() {
   
   if (rendertimer < 2){ // it basically doesn't render it you hav't pressed anything and nothing has been changed
-    displaykeyboard(100,200,0.40); // it improves performance
+    displaykeyboard(100,200,0.4); // it improves performance
     console.log('rendered'); // sort of unnecessary but ill keep it
   }
   
@@ -327,7 +333,7 @@ function keyReleased(){ // only used for command keys this is mainly a template
     key = '';
   }
   if (keyCode == TAB){
-    // idk do whatever you want
+    typed += '    ';
     // probably wont be that useful unless you confugure the browser
     key = '';
   }
