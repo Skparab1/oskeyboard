@@ -40,17 +40,17 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   let buttonnum = 1;
   
   //render the large square 
-  fill(150);
+  fill(boardcolor);
   rect(100+xdiff,846+ydiff,1850*keysize,515*keysize);
   
   // render first row of keys (~12345)
-  fill(0);
+  fill(keycolor);
   while (rectx <= 100+(1500*keysize)){ // keep on going till your at the end (for the sizing)
     // the lightup logistics (for both the reg and the shifted
     if (((buttonnum == 1 && (key == '~'||key == '`'))||(buttonnum == 2 && (key == '1'||(key == '!'&&(shift||capslock))))||(buttonnum == 3 && (key == '2'||key == '@'))||(buttonnum == 4 && (key == '3'||key == '#'))||(buttonnum == 5 && (key == '4'||key == '$'))||(buttonnum == 6 && (key == '5'||key == '%'))||(buttonnum == 7 && (key == '6'||key == '^'))||(buttonnum == 8 && (key == '7'||key == '&'))||(buttonnum == 9 && (key == '8'||key == '*'))||(buttonnum == 10 && (key == '9'||key == '('))||(buttonnum == 11 && (key == '0'||key == ')'))||(buttonnum == 12 && (key == '-'||key == '_'))||(buttonnum == 13 && (key == '='||key == '+'))) && (lightup == 'on')){     
       fill(200,100,0);
     } else {
-      fill(0);
+      fill(keycolor);
     }
     
     // rendering the actual key
@@ -83,7 +83,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   if (keyCode == BACKSPACE){
     fill(200,100,0);
   } else {
-    fill(0);
+    fill(keycolor);
   }
   // rendering the key
   rect(rectx+xdiff,(860-846)*keysize+846+ydiff,245*keysize,85*keysize);
@@ -96,7 +96,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     if (((buttonnum == 2 && key == 'q')||(buttonnum == 3 && key == 'w')||(buttonnum == 4 && key == 'e')||(buttonnum == 5 && key == 'r')||(buttonnum == 6 && key == 't')||(buttonnum == 7 && key == 'y')||(buttonnum == 8 && key == 'u')||(buttonnum == 9 && key == 'i')||(buttonnum == 10 && key == 'o')||(buttonnum == 11 && key == 'p')||(buttonnum == 12 && (key == '[' || key == '{'))||(buttonnum == 13 && (key == ']' || key == '}'))||(buttonnum == 14 && (key == '\\' || key == '|'))||(buttonnum == 15 && (key == '!' || key == '¡'))) && (lightup == 'on')){      fill(200,100,0);
       fill(200,100,0);
     } else {
-      fill(0);
+      fill(keycolor);
       
     }
     buttonnum -= 1;
@@ -115,7 +115,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     rect(rectx+xdiff,(960-846)*keysize+846+ydiff,100*keysize,85*keysize);
     rectx += 115*keysize;
   }
-  fill(0);
+  fill(keycolor);
   //rect(rectx+xdiff,(960-846)*keysize+846+ydiff,330*keysize,85*keysize);
   
   // the tab key
@@ -126,7 +126,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   if (keyCode == TAB){
     fill(200,100,0);
   } else {
-    fill(0);
+    fill(keycolor);
   }
   rect(100+(50*keysize)+xdiff,(960-846)*keysize+846+ydiff,130*keysize,85*keysize);
   
@@ -141,7 +141,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     if (((buttonnum == 3 && key == 'a')||(buttonnum == 4 && key == 's')||(buttonnum == 5 && key == 'd')||(buttonnum == 6 && key == 'f')||(buttonnum == 7 && key == 'g')||(buttonnum == 8 && key == 'h')||(buttonnum == 9 && key == 'j')||(buttonnum == 10 && key == 'k')||(buttonnum == 11 && key == 'l')||(buttonnum == 12 && (key == ';'||key == ':'))||(buttonnum == 13 && (key == "'"||key == '/"'))) && (lightup == 'on')){      fill(200,100,0);
       fill(200,100,0);
     } else {
-      fill(0);
+      fill(keycolor);
     }
     // stimulating the click for oskeyboard
     buttonnum -= 0;
@@ -170,7 +170,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     keyCode = ''; // this stuff it there only for the light up effect
     fill(200,100,0);
   } else {
-    fill(0);
+    fill(keycolor);
   }
   // render capslock key
   rect(100+(50*keysize)+xdiff,(1160-846)*keysize+846+ydiff,210*keysize,85*keysize);
@@ -190,7 +190,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     //key = '';
     fill(200,100,0);
   } else {
-    fill(0);
+    fill(keycolor);
   }
   // render
   rect(100+(50*keysize)+xdiff,(1060-846)*keysize+846+ydiff,170*keysize,85*keysize);
@@ -205,7 +205,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   if (keyCode == ENTER){
     fill(200,100,0);
   } else {
-    fill(0);
+    fill(keycolor);
   }
   // render key
   rect(rectx+xdiff,(1060-846)*keysize+846+ydiff,290*keysize,85*keysize);
@@ -226,7 +226,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     if (((buttonnum == 1 && key == 'z')||(buttonnum == 2 && key == 'x')||(buttonnum == 3 && key == 'c')||(buttonnum == 4 && key == 'v')||(buttonnum == 5 && key == 'b')||(buttonnum == 6 && key == 'n')||(buttonnum == 7 && key == 'm')||(buttonnum == 8 && (key == ','||key == '<'))||(buttonnum == 9 && (key == '.'||key == '>'))||(buttonnum == 10 && (key == '/'||key == '?'))) && (lightup == 'on')){      fill(200,100,0);
       fill(200,100,0);
     } else {
-      fill(0);
+      fill(keycolor);
     }
     // stimulate keypress for each key
     if (clickedpos[0] > rectx+xdiff && clickedpos[0] < (rectx+xdiff+(100*keysize)) && clickedpos[1] > (1160-846)*keysize+846+ydiff && clickedpos[1] < (1160-846)*keysize+846+ydiff+(85*keysize)){
@@ -260,7 +260,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     key = '';
     fill(200,100,0);
   } else {
-    fill(0);
+    fill(keycolor);
   }
   // render
   rect(rectx+xdiff,(1160-846)*keysize+846+ydiff,365*keysize,85*keysize);
@@ -274,12 +274,12 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   if (key == ' '){
     fill(200,100,0);
   } else {
-    fill(0);
+    fill(keycolor);
   }
   // render key wait which key the space key oh ok SPACE KEY
   rect(100+(505*keysize)+xdiff,(1260-846)*keysize+846+ydiff,560*keysize,85*keysize);
   
-  fill(0);
+  fill(keycolor);
   // hidekeys key
   rect(100+(50*keysize)+xdiff,(1260-846)*keysize+846+ydiff,440*keysize,85*keysize);
   if (clickedpos[0] > 100+(50*keysize)+xdiff && clickedpos[0] < 100+(50*keysize)+xdiff+(440*keysize) && clickedpos[1] > (1260-846)*keysize+846+ydiff && clickedpos[1] < (1260-846)*keysize+846+ydiff+(85*keysize)){
@@ -296,7 +296,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     if ((buttonnum == 1 && key == 'ArrowLeft')||(buttonnum == 2 && key == 'ArrowUp')||(buttonnum == 3 && key == 'ArrowDown')||(buttonnum == 4 && key == 'ArrowRight')){ 
       fill(200,100,0);
     } else {
-      fill(0);
+      fill(keycolor);
     }
     // stimulate keypress for each key
     if (clickedpos[0] > rectx+xdiff && clickedpos[0] < (rectx+xdiff+(165*keysize)) && clickedpos[1] > (1260-846)*keysize+846+ydiff && clickedpos[1] < (1260-846)*keysize+846+ydiff+(85*keysize)){
@@ -314,7 +314,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   let wrappedText = textWrap(50,typed, false); //theoretically making that false a true would cut the text wrap at spaces but that doesn't work right now
   // so it cuts at 50 characters now
   //print(wrappedText); just for checking ok so ill comment it out
-  fill(0);
+  fill(keycolor);
   textSize(40);
   
   // iterates though the list and prints out each line of the wrapped text
@@ -402,9 +402,17 @@ var capslock = false;
 var shift = false;
 var backspacer = 0;
 var pressedshift = false;
+var keycolor = [];
+var boardcolor = [];
+var colorer = 0;
 
 // this one is the recursive one
 function draw() {
+  if (colorer == 0){
+    keycolor = [random(0,100),random(0,100),random(0,100)];
+    boardcolor = [random(155,255),random(155,255),random(155,255)];
+    colorer += 1;
+  }
   
   if (rendertimer < 2){ // it basically doesn't render it you hav't pressed anything and nothing has been changed
     displaykeyboard(100,200,0.4); // it improves performance
