@@ -15,6 +15,9 @@
   ![](media/keyboard_link.gif)
 
   - color customizable (currect webpage uses random colors on each reload)
+
+  ![](media/customizable_color.gif)
+
   - shift and capslock implementation
     - changes characters on keyboard display
   - optimized for fast performance
