@@ -47,7 +47,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   fill(0);
   while (rectx <= 100+(1500*keysize)){ // keep on going till your at the end (for the sizing)
     // the lightup logistics (for both the reg and the shifted
-    if (((buttonnum == 1 && (key == '~'||key == '`'))||(buttonnum == 2 && (key == '1'||key == '!'))||(buttonnum == 3 && (key == '2'||key == '@'))||(buttonnum == 4 && (key == '3'||key == '#'))||(buttonnum == 5 && (key == '4'||key == '$'))||(buttonnum == 6 && (key == '5'||key == '%'))||(buttonnum == 7 && (key == '6'||key == '^'))||(buttonnum == 8 && (key == '7'||key == '&'))||(buttonnum == 9 && (key == '8'||key == '*'))||(buttonnum == 10 && (key == '9'||key == '('))||(buttonnum == 11 && (key == '0'||key == ')'))||(buttonnum == 12 && (key == '-'||key == '_'))||(buttonnum == 13 && (key == '='||key == '+'))) && (lightup == 'on')){     
+    if (((buttonnum == 1 && (key == '~'||key == '`'))||(buttonnum == 2 && (key == '1'||(key == '!'&&(shift||capslock))))||(buttonnum == 3 && (key == '2'||key == '@'))||(buttonnum == 4 && (key == '3'||key == '#'))||(buttonnum == 5 && (key == '4'||key == '$'))||(buttonnum == 6 && (key == '5'||key == '%'))||(buttonnum == 7 && (key == '6'||key == '^'))||(buttonnum == 8 && (key == '7'||key == '&'))||(buttonnum == 9 && (key == '8'||key == '*'))||(buttonnum == 10 && (key == '9'||key == '('))||(buttonnum == 11 && (key == '0'||key == ')'))||(buttonnum == 12 && (key == '-'||key == '_'))||(buttonnum == 13 && (key == '='||key == '+'))) && (lightup == 'on')){     
       fill(200,100,0);
     } else {
       fill(0);
@@ -58,8 +58,12 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     
     // for the click activation when you press it
     if (clickedpos[0] > rectx+xdiff && clickedpos[0] < (rectx+xdiff+(100*keysize)) && clickedpos[1] > (860-846)*keysize+846+ydiff && clickedpos[1] <(860-846)*keysize+846+ydiff+(85*keysize)){
-      if (buttonnum == 1){ key = '~'; keyPressed(); } else if (buttonnum == 2){ key = '1'; keyPressed(); } else if (buttonnum == 3){ key = '2'; keyPressed(); } else if (buttonnum == 4){ key = '3'; keyPressed(); } else if (buttonnum == 5){ key = '4'; keyPressed(); } else if (buttonnum == 6){ key = '5'; keyPressed(); } else if (buttonnum == 7){ key = '6'; keyPressed(); } else if (buttonnum == 8){ key = '7'; keyPressed(); } else if (buttonnum == 9){ key = '8'; keyPressed(); } else if (buttonnum == 10){ key = '9'; keyPressed(); } else if (buttonnum == 11){ key = '0'; keyPressed(); } else if (buttonnum == 12){ key = '-'; keyPressed(); } else if (buttonnum == 13){ key = '='; keyPressed(); }
       keyCode = '';
+      if (shift || capslock){
+        if (buttonnum == 1){ key = '`'; keyPressed(); } else if (buttonnum == 2){ key = '!'; keyPressed(); } else if (buttonnum == 3){ key = '@'; keyPressed(); } else if (buttonnum == 4){ key = '#'; keyPressed(); } else if (buttonnum == 5){ key = '$'; keyPressed(); } else if (buttonnum == 6){ key = '%'; keyPressed(); } else if (buttonnum == 7){ key = '^'; keyPressed(); } else if (buttonnum == 8){ key = '&'; keyPressed(); } else if (buttonnum == 9){ key = '*'; keyPressed(); } else if (buttonnum == 10){ key = '('; keyPressed(); } else if (buttonnum == 11){ key = ')'; keyPressed(); } else if (buttonnum == 12){ key = '_'; keyPressed(); } else if (buttonnum == 13){ key = '+'; keyPressed(); }
+      } else {
+        if (buttonnum == 1){ key = '~'; keyPressed(); } else if (buttonnum == 2){ key = '1'; keyPressed(); } else if (buttonnum == 3){ key = '2'; keyPressed(); } else if (buttonnum == 4){ key = '3'; keyPressed(); } else if (buttonnum == 5){ key = '4'; keyPressed(); } else if (buttonnum == 6){ key = '5'; keyPressed(); } else if (buttonnum == 7){ key = '6'; keyPressed(); } else if (buttonnum == 8){ key = '7'; keyPressed(); } else if (buttonnum == 9){ key = '8'; keyPressed(); } else if (buttonnum == 10){ key = '9'; keyPressed(); } else if (buttonnum == 11){ key = '0'; keyPressed(); } else if (buttonnum == 12){ key = '-'; keyPressed(); } else if (buttonnum == 13){ key = '='; keyPressed(); }
+      }
     }
     
     // update stuff
@@ -89,7 +93,7 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   // render the qwerty row
   while (rectx <= 100+(1550*keysize)+(115*keysize)+(115*keysize)){
     // the lightup stuff
-    if (((buttonnum == 2 && key == 'q')||(buttonnum == 3 && key == 'w')||(buttonnum == 4 && key == 'e')||(buttonnum == 5 && key == 'r')||(buttonnum == 6 && key == 't')||(buttonnum == 7 && key == 'y')||(buttonnum == 8 && key == 'u')||(buttonnum == 9 && key == 'i')||(buttonnum == 10 && key == 'o')||(buttonnum == 11 && key == 'p')||(buttonnum == 12 && key == ';')||(buttonnum == 13 && key == ':')) && (lightup == 'on')){      fill(200,100,0);
+    if (((buttonnum == 2 && key == 'q')||(buttonnum == 3 && key == 'w')||(buttonnum == 4 && key == 'e')||(buttonnum == 5 && key == 'r')||(buttonnum == 6 && key == 't')||(buttonnum == 7 && key == 'y')||(buttonnum == 8 && key == 'u')||(buttonnum == 9 && key == 'i')||(buttonnum == 10 && key == 'o')||(buttonnum == 11 && key == 'p')||(buttonnum == 12 && (key == '[' || key == '{'))||(buttonnum == 13 && (key == ']' || key == '}'))||(buttonnum == 14 && (key == '\\' || key == '|'))||(buttonnum == 15 && (key == '!' || key == '¡'))) && (lightup == 'on')){      fill(200,100,0);
       fill(200,100,0);
     } else {
       fill(0);
@@ -98,8 +102,12 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     buttonnum -= 1;
     // stimulating the click
     if (clickedpos[0] > rectx+xdiff && clickedpos[0] < (rectx+xdiff+(100*keysize)) && clickedpos[1] > (960-846)*keysize+846+ydiff &&  clickedpos[1] < (960-846)*keysize+846+ydiff+(85*keysize)){
-      if (buttonnum == 1){ key = 'q'; keyPressed(); } else if (buttonnum == 2){ key = 'w'; keyPressed(); } else if (buttonnum == 3){ key = 'e'; keyPressed(); } else if (buttonnum == 4){ key = 'r'; keyPressed(); } else if (buttonnum == 5){ key = 't'; keyPressed(); } else if (buttonnum == 6){ key = 'y'; keyPressed(); } else if (buttonnum == 7){ key = 'u'; keyPressed(); } else if (buttonnum == 8){ key = 'i'; keyPressed(); } else if (buttonnum == 9){ key = 'o'; keyPressed(); } else if (buttonnum == 10){ key = 'p'; keyPressed(); } else if (buttonnum == 11){ key = ';'; keyPressed(); } else if (buttonnum == 12){ key = ':'; keyPressed(); }
       keyCode = '';
+      if (shift || capslock){
+        if (buttonnum == 1){ key = 'q'; keyPressed(); } else if (buttonnum == 2){ key = 'w'; keyPressed(); } else if (buttonnum == 3){ key = 'e'; keyPressed(); } else if (buttonnum == 4){ key = 'r'; keyPressed(); } else if (buttonnum == 5){ key = 't'; keyPressed(); } else if (buttonnum == 6){ key = 'y'; keyPressed(); } else if (buttonnum == 7){ key = 'u'; keyPressed(); } else if (buttonnum == 8){ key = 'i'; keyPressed(); } else if (buttonnum == 9){ key = 'o'; keyPressed(); } else if (buttonnum == 10){ key = 'p'; keyPressed(); } else if (buttonnum == 11){ key = '{'; keyPressed(); } else if (buttonnum == 12){ key = '}'; keyPressed(); } else if (buttonnum == 13){ key = '|'; keyPressed(); } else if (buttonnum == 14){ key = '¡'; keyPressed(); }
+      } else {
+        if (buttonnum == 1){ key = 'q'; keyPressed(); } else if (buttonnum == 2){ key = 'w'; keyPressed(); } else if (buttonnum == 3){ key = 'e'; keyPressed(); } else if (buttonnum == 4){ key = 'r'; keyPressed(); } else if (buttonnum == 5){ key = 't'; keyPressed(); } else if (buttonnum == 6){ key = 'y'; keyPressed(); } else if (buttonnum == 7){ key = 'u'; keyPressed(); } else if (buttonnum == 8){ key = 'i'; keyPressed(); } else if (buttonnum == 9){ key = 'o'; keyPressed(); } else if (buttonnum == 10){ key = 'p'; keyPressed(); } else if (buttonnum == 11){ key = '['; keyPressed(); } else if (buttonnum == 12){ key = ']'; keyPressed(); } else if (buttonnum == 13){ key = '\\'; keyPressed(); } else if (buttonnum == 14){ key = '!'; keyPressed(); }
+      }
     }
     
     buttonnum += 2;
@@ -107,10 +115,6 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
     rect(rectx+xdiff,(960-846)*keysize+846+ydiff,100*keysize,85*keysize);
     rectx += 115*keysize;
   }
-  
-  //if (clickedpos[0] > rectx+xdiff && clickedpos[0] < rectx+xdiff+(330*keysize) && clickedpos[1] > (960-846)*keysize+846+ydiff && clickedpos[1] < (960-846)*keysize+846+ydiff+(85*keysize)){
-    // hide keys operation
-  //}
   fill(0);
   //rect(rectx+xdiff,(960-846)*keysize+846+ydiff,330*keysize,85*keysize);
   
@@ -133,21 +137,28 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   // render the asdf row
   while (rectx <= 100+(1550*keysize)-(115*keysize)){
     // the light up stuff
-    if (((buttonnum == 3 && key == 'a')||(buttonnum == 4 && key == 's')||(buttonnum == 5 && key == 'd')||(buttonnum == 6 && key == 'f')||(buttonnum == 7 && key == 'g')||(buttonnum == 8 && key == 'h')||(buttonnum == 9 && key == 'j')||(buttonnum == 10 && key == 'k')||(buttonnum == 11 && key == 'l')||(buttonnum == 12 && key == '.')||(buttonnum == 13 && key == ',')) && (lightup == 'on')){      fill(200,100,0);
+    buttonnum += 2;
+    if (((buttonnum == 3 && key == 'a')||(buttonnum == 4 && key == 's')||(buttonnum == 5 && key == 'd')||(buttonnum == 6 && key == 'f')||(buttonnum == 7 && key == 'g')||(buttonnum == 8 && key == 'h')||(buttonnum == 9 && key == 'j')||(buttonnum == 10 && key == 'k')||(buttonnum == 11 && key == 'l')||(buttonnum == 12 && (key == ';'||key == ':'))||(buttonnum == 13 && (key == "'"||key == '/"'))) && (lightup == 'on')){      fill(200,100,0);
       fill(200,100,0);
     } else {
       fill(0);
     }
     // stimulating the click for oskeyboard
+    buttonnum -= 0;
     if (clickedpos[0] > rectx+xdiff && clickedpos[0] < (rectx+xdiff+(100*keysize)) && clickedpos[1] > (1060-846)*keysize+846+ydiff &&  clickedpos[1] < (1060-846)*keysize+846+ydiff+(85*keysize)){
-      if (buttonnum == 3){ key = 'a'; keyPressed(); } else if (buttonnum == 4){ key = 's'; keyPressed(); } else if (buttonnum == 5){ key = 'd'; keyPressed(); } else if (buttonnum == 6){ key = 'f'; keyPressed(); } else if (buttonnum == 7){ key = 'g'; keyPressed(); } else if (buttonnum == 8){ key = 'h'; keyPressed(); } else if (buttonnum == 9){ key = 'j'; keyPressed(); } else if (buttonnum == 10){ key = 'k'; keyPressed(); } else if (buttonnum == 11){ key = 'l'; keyPressed(); } else if (buttonnum == 12){ key = '.'; keyPressed(); } else if (buttonnum == 13){ key = ','; keyPressed(); }
       keyCode = ''; 
+      if (shift || capslock){
+        if (buttonnum == 3){ key = 'a'; keyPressed(); } else if (buttonnum == 4){ key = 's'; keyPressed(); } else if (buttonnum == 5){ key = 'd'; keyPressed(); } else if (buttonnum == 6){ key = 'f'; keyPressed(); } else if (buttonnum == 7){ key = 'g'; keyPressed(); } else if (buttonnum == 8){ key = 'h'; keyPressed(); } else if (buttonnum == 9){ key = 'j'; keyPressed(); } else if (buttonnum == 10){ key = 'k'; keyPressed(); } else if (buttonnum == 11){ key = 'l'; keyPressed(); } else if (buttonnum == 12){ key = ':'; keyPressed(); } else if (buttonnum == 13){ key = '\"'; keyPressed(); }
+      } else {
+        if (buttonnum == 3){ key = 'a'; keyPressed(); } else if (buttonnum == 4){ key = 's'; keyPressed(); } else if (buttonnum == 5){ key = 'd'; keyPressed(); } else if (buttonnum == 6){ key = 'f'; keyPressed(); } else if (buttonnum == 7){ key = 'g'; keyPressed(); } else if (buttonnum == 8){ key = 'h'; keyPressed(); } else if (buttonnum == 9){ key = 'j'; keyPressed(); } else if (buttonnum == 10){ key = 'k'; keyPressed(); } else if (buttonnum == 11){ key = 'l'; keyPressed(); } else if (buttonnum == 12){ key = ';'; keyPressed(); } else if (buttonnum == 13){ key = '\''; keyPressed(); }
+      }
     }
-    
-    buttonnum += 1;
+   
+    buttonnum -= 1;
     // render it
     rect(rectx+xdiff,(1060-846)*keysize+846+ydiff,100*keysize,85*keysize);
     rectx += 115*keysize;
+    buttonnum -= 0;
   }
  
   // the capslock var setting and mod
@@ -157,7 +168,6 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   // light up effect
   if (capslock){
     keyCode = ''; // this stuff it there only for the light up effect
-    key = '';
     fill(200,100,0);
   } else {
     fill(0);
@@ -166,13 +176,18 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   rect(100+(50*keysize)+xdiff,(1160-846)*keysize+846+ydiff,210*keysize,85*keysize);
   
   // shift button logistics
-  if (clickedpos[0] > 100+(50*keysize)+xdiff && clickedpos[0] < 100+(50*keysize)+xdiff+(270*keysize) && clickedpos[1] > (1060-846)*keysize+846+ydiff && clickedpos[1] < (1060-846)*keysize+846+ydiff+(85*keysize)){
+  if (clickedpos[0] > 100+(50*keysize)+xdiff && clickedpos[0] < 100+(50*keysize)+xdiff+(170*keysize) && clickedpos[1] > (1060-846)*keysize+846+ydiff && clickedpos[1] < (1060-846)*keysize+846+ydiff+(85*keysize)){
     shift = !shift;
+    if (shift){
+      pressedshift = true;
+    } else {
+      pressedshift = false;
+    }
   }
   // lightup and clear other lightups
   if (shift){
     keyCode = '';
-    key = '';
+    //key = '';
     fill(200,100,0);
   } else {
     fill(0);
@@ -207,15 +222,21 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   // render zxcvb row and space key
   while (rectx <= 100+(1490*keysize)-(115*keysize)){
     // the light up effect
-    if (((buttonnum == 1 && key == 'z')||(buttonnum == 2 && key == 'x')||(buttonnum == 3 && key == 'c')||(buttonnum == 4 && key == 'v')||(buttonnum == 5 && key == 'b')||(buttonnum == 6 && key == 'n')||(buttonnum == 7 && key == 'm')||(buttonnum == 8 && key == '!')||(buttonnum == 9 && key == '?')||(buttonnum == 10 && key == '@')||(buttonnum == 11 && key == '&')) && (lightup == 'on')){      fill(200,100,0);
+    console.log(key);
+    if (((buttonnum == 1 && key == 'z')||(buttonnum == 2 && key == 'x')||(buttonnum == 3 && key == 'c')||(buttonnum == 4 && key == 'v')||(buttonnum == 5 && key == 'b')||(buttonnum == 6 && key == 'n')||(buttonnum == 7 && key == 'm')||(buttonnum == 8 && (key == ','||key == '<'))||(buttonnum == 9 && (key == '.'||key == '>'))||(buttonnum == 10 && (key == '/'||key == '?'))) && (lightup == 'on')){      fill(200,100,0);
       fill(200,100,0);
     } else {
       fill(0);
     }
     // stimulate keypress for each key
     if (clickedpos[0] > rectx+xdiff && clickedpos[0] < (rectx+xdiff+(100*keysize)) && clickedpos[1] > (1160-846)*keysize+846+ydiff && clickedpos[1] < (1160-846)*keysize+846+ydiff+(85*keysize)){
-      if (buttonnum == 1){ key = 'z'; keyPressed(); } else if (buttonnum == 2){ key = 'x'; keyPressed(); } else if (buttonnum == 3){ key = 'c'; keyPressed(); } else if (buttonnum == 4){ key = 'v'; keyPressed(); } else if (buttonnum == 5){ key = 'b'; keyPressed(); } else if (buttonnum == 6){ key = 'n'; keyPressed(); } else if (buttonnum == 7){ key = 'm'; keyPressed(); } else if (buttonnum == 8){ key = '!'; keyPressed(); } else if (buttonnum == 9){ key = '?'; keyPressed(); } else if (buttonnum == 10){ key = '@'; keyPressed(); } else if (buttonnum == 11){ key = '&'; keyPressed();}
       keyCode = '';
+      if (shift || capslock){
+        if (buttonnum == 1){ key = 'z'; keyPressed(); } else if (buttonnum == 2){ key = 'x'; keyPressed(); } else if (buttonnum == 3){ key = 'c'; keyPressed(); } else if (buttonnum == 4){ key = 'v'; keyPressed(); } else if (buttonnum == 5){ key = 'b'; keyPressed(); } else if (buttonnum == 6){ key = 'n'; keyPressed(); } else if (buttonnum == 7){ key = 'm'; keyPressed(); } else if (buttonnum == 8){ key = '<'; keyPressed(); } else if (buttonnum == 9){ key = '>'; keyPressed(); } else if (buttonnum == 10){ key = '?'; keyPressed(); }
+      } else {
+        if (buttonnum == 1){ key = 'z'; keyPressed(); } else if (buttonnum == 2){ key = 'x'; keyPressed(); } else if (buttonnum == 3){ key = 'c'; keyPressed(); } else if (buttonnum == 4){ key = 'v'; keyPressed(); } else if (buttonnum == 5){ key = 'b'; keyPressed(); } else if (buttonnum == 6){ key = 'n'; keyPressed(); } else if (buttonnum == 7){ key = 'm'; keyPressed(); } else if (buttonnum == 8){ key = ','; keyPressed(); } else if (buttonnum == 9){ key = '.'; keyPressed(); } else if (buttonnum == 10){ key = '/'; keyPressed(); }
+      }
+      console.log(key);
     }
     
     buttonnum += 1;
@@ -225,8 +246,13 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   }
   
   // the second shift key
-  if (clickedpos[0] > rectx+xdiff && clickedpos[0] < rectx+xdiff+(170*keysize) && clickedpos[1] > (1160-846)*keysize+846+ydiff && clickedpos[1] < (1160-846)*keysize+846+ydiff+(85*keysize)){
+  if (clickedpos[0] > rectx+xdiff && clickedpos[0] < rectx+xdiff+(365*keysize) && clickedpos[1] > (1160-846)*keysize+846+ydiff && clickedpos[1] < (1160-846)*keysize+846+ydiff+(85*keysize)){
     shift = !shift;
+    if (shift){
+      pressedshift = true;
+    } else {
+      pressedshift = false;
+    }
   }
   // lightup and clear other lightups
   if (shift){
@@ -253,9 +279,13 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   // render key wait which key the space key oh ok SPACE KEY
   rect(100+(505*keysize)+xdiff,(1260-846)*keysize+846+ydiff,560*keysize,85*keysize);
   
+  fill(0);
   // hidekeys key
   rect(100+(50*keysize)+xdiff,(1260-846)*keysize+846+ydiff,440*keysize,85*keysize);
-  
+  if (clickedpos[0] > 100+(50*keysize)+xdiff && clickedpos[0] < 100+(50*keysize)+xdiff+(440*keysize) && clickedpos[1] > (1260-846)*keysize+846+ydiff && clickedpos[1] < (1260-846)*keysize+846+ydiff+(85*keysize)){
+    // hidekeys operation
+    //typed += 'hid keys';
+  }
   // set starting x position
   rectx = 100+(235*keysize)+(5*keysize)+(115*keysize)+(115*keysize)+(40*keysize)+(115*keysize)+(115*keysize)+(115*keysize)+(115*keysize)+(115*keysize);
   buttonnum = 1;
@@ -263,14 +293,14 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   // render the final row and space key
   while (rectx <= 100+(1490*keysize)+(115*keysize)+(115*keysize)){
     // the light up effect
-    if (((buttonnum == 1 && key == 'z')||(buttonnum == 2 && key == 'x')||(buttonnum == 3 && key == 'c')||(buttonnum == 4 && key == 'v')||(buttonnum == 5 && key == 'b')||(buttonnum == 6 && key == 'n')||(buttonnum == 7 && key == 'm')||(buttonnum == 8 && key == '!')||(buttonnum == 9 && key == '?')||(buttonnum == 10 && key == '@')||(buttonnum == 11 && key == '&')) && (lightup == 'on')){      fill(200,100,0);
+    if ((buttonnum == 1 && key == 'ArrowLeft')||(buttonnum == 2 && key == 'ArrowUp')||(buttonnum == 3 && key == 'ArrowDown')||(buttonnum == 4 && key == 'ArrowRight')){ 
       fill(200,100,0);
     } else {
       fill(0);
     }
     // stimulate keypress for each key
-    if (clickedpos[0] > rectx+xdiff && clickedpos[0] < (rectx+xdiff+(100*keysize)) && clickedpos[1] > (1160-846)*keysize+846+ydiff && clickedpos[1] < (1160-846)*keysize+846+ydiff+(85*keysize)){
-      if (buttonnum == 1){ key = 'z'; keyPressed(); } else if (buttonnum == 2){ key = 'x'; keyPressed(); } else if (buttonnum == 3){ key = 'c'; keyPressed(); } else if (buttonnum == 4){ key = 'v'; keyPressed(); } else if (buttonnum == 5){ key = 'b'; keyPressed(); } else if (buttonnum == 6){ key = 'n'; keyPressed(); } else if (buttonnum == 7){ key = 'm'; keyPressed(); } else if (buttonnum == 8){ key = '!'; keyPressed(); } else if (buttonnum == 9){ key = '?'; keyPressed(); } else if (buttonnum == 10){ key = '@'; keyPressed(); } else if (buttonnum == 11){ key = '&'; keyPressed();}
+    if (clickedpos[0] > rectx+xdiff && clickedpos[0] < (rectx+xdiff+(165*keysize)) && clickedpos[1] > (1260-846)*keysize+846+ydiff && clickedpos[1] < (1260-846)*keysize+846+ydiff+(85*keysize)){
+      if (buttonnum == 1){ key = 'ArrowLeft'; keyPressed(); } else if (buttonnum == 2){ key = 'ArrowUp'; keyPressed(); } else if (buttonnum == 3){ key = 'ArrowDown'; keyPressed(); } else if (buttonnum == 4){ key = 'ArrowRight'; keyPressed(); }
       keyCode = '';
     }
     
@@ -301,18 +331,27 @@ function displaykeyboard(xpos,ypos,keysize) { // the function
   if (capslock || shift){
     text('  `     !   @   #    $    %   ^    &    *     (    )     _    +  Bkspce',100+xdiff+(52*keysize),(925-846)*keysize+846+ydiff);
     fill(255,255,0);
+    textSize(65*keysize);
+    text(' Tab   Q   W    E    R    T    Y    U    I    O    P    {      }      |     ¡',100+xdiff+(43*keysize),(1025-846)*keysize+846+ydiff);
+    text(' Shift    A    S    D    F    G    H    J    K    L     :      "      Enter ',100+xdiff+(43*keysize), (1125-846)*keysize+846+ydiff);
+    textSize(40*keysize);
+    text('  Caps Lock',100+xdiff+(43*keysize), (1225-846)*keysize+846+ydiff);
+    textSize(65*keysize);
+    text('              Z    X    C    V    B    N    M    <    >    ?            Shift  ',100+xdiff+(43*keysize), (1225-846)*keysize+846+ydiff);
+
   } else {
-    text('~    1    2    3    4    5    6    7    8    9    0     -    =   Bkspce',100+xdiff+(52*keysize),(925-846)*keysize+846+ydiff);
+    text(' ~   1    2    3    4    5    6    7    8    9    0     -    =   Bkspce',100+xdiff+(52*keysize),(925-846)*keysize+846+ydiff);
     fill(255);
+    textSize(65*keysize);
+    text(' Tab   Q   W    E    R    T    Y    U    I    O    P    [      ]      \\     !',100+xdiff+(43*keysize),(1025-846)*keysize+846+ydiff);
+    text(" Shift    A    S    D    F    G    H    J    K    L     ;      '      Enter ",100+xdiff+(43*keysize), (1125-846)*keysize+846+ydiff);
+    textSize(40*keysize);
+    text('  Caps Lock',100+xdiff+(43*keysize), (1225-846)*keysize+846+ydiff);
+    textSize(65*keysize);
+    text('              Z    X    C    V    B    N    M    ,     .     /            Shift  ',100+xdiff+(43*keysize), (1225-846)*keysize+846+ydiff);
+
   }
-  textSize(65*keysize);
-  text(' Tab   Q   W    E    R    T    Y    U    I    O    P    [      ]      \\     !',100+xdiff+(43*keysize),(1025-846)*keysize+846+ydiff);
-  text(" Shift    A    S    D    F    G    H    J    K    L     ;      '      Enter ",100+xdiff+(43*keysize), (1125-846)*keysize+846+ydiff);
-  textSize(40*keysize);
-  text('  Caps Lock',100+xdiff+(43*keysize), (1225-846)*keysize+846+ydiff);
-  textSize(65*keysize);
-  text('              Z    X    C    V    B    N    M    ,     .     /            Shift  ',100+xdiff+(43*keysize), (1225-846)*keysize+846+ydiff);
-  fill(255);
+    fill(255);
   text('Hide Keyboard            Space',100+xdiff+(55*keysize), (1325-846)*keysize+846+ydiff);
   textSize(90*keysize);
   text('                                           ◄   ▲    ▼   ►',100+xdiff+(55*keysize), (1325-840)*keysize+846+ydiff);
@@ -362,6 +401,7 @@ var rendertimer = 0;
 var capslock = false;
 var shift = false;
 var backspacer = 0;
+var pressedshift = false;
 
 // this one is the recursive one
 function draw() {
@@ -383,6 +423,12 @@ function draw() {
       keyReleased();
     }
   }
+  
+  if (keyIsDown(SHIFT) || pressedshift){
+    shift = true;
+  } else {
+    shift = false;
+  }
 }
 
 function mousePressed(){ // makes it rerender and hands off the coordinates to the keypress stimulator
@@ -392,13 +438,21 @@ function mousePressed(){ // makes it rerender and hands off the coordinates to t
 
 function keyPressed(){ // the stimulator calls this
   // this part overrides any command keys from getting appended
+  console.log(key);
+  if (key == 'CapsLock'){ // implementation of functional capslock key to oskeyboard
+    capslock = !capslock;
+    key = '';
+  }
+  console.log('keypressed');
   if (keyCode != BACKSPACE && keyCode != DELETE && keyCode != ENTER && key != 'Meta' && key != 'Alt' && key != 'Control' && key != 'Shift' && key != 'CapsLock' && key != 'Tab' && key != 'ArrowUp' && key != 'ArrowDown' && key != 'ArrowLeft' && key != 'ArrowRight'){
+    console.log('keypressed inside');
     if (capslock || shift){ // makes it uppercase if either setting is enabled
       typed += key.toUpperCase();
       shift = false; // shift is canceled so that it doesnt repeat
     } else {
       typed += key; // appends the key
     }
+    pressedshift = false;
     keyCode = ''; // resets the keycode to prevent stale lightup
   }
   rendertimer = 0; // makes it rerender
@@ -413,10 +467,34 @@ function keyReleased(){ // only used for command keys this is mainly a template
     // idk do whatever you want
     key = '';
   }
+  if (key == 'CapsLock'){ // implementation of functional capslock key to oskeyboard
+    capslock = !capslock;
+    key = '';
+  }
   if (keyCode == TAB){
     typed += '    ';
     // probably wont be that useful unless you confugure the browser
     key = '';
+  }
+  if (keyCode == 'ArrowLeft'){
+    //idk do whatever you want for left arrow
+    key = '';
+  }
+  if (keyCode == 'ArrowUp'){
+    //idk do whatever you want for up arrow
+    key = '';
+  }
+  if (keyCode == 'ArrowDown'){
+    //idk do whatever you want for down arrow
+    key = '';
+  }
+  if (keyCode == 'ArrowRight'){
+    //idk do whatever you want for right arrow
+    key = '';
+  }
+  if (key == 'Meta' || key == 'Alt' || key == 'Control'){ // makes pressing command, control, or alt act as a keypress
+    mousePressed();
+    console.log('done');
   }
   rendertimer = 0; // rerenders
 }
