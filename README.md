@@ -8,3 +8,4 @@
     - light up oskeyboard when keys are pressed
     - can control shift key of oskeyboard
     - can control capslock key (for turning on, i havn't figured out the off part
+  - color customizable
