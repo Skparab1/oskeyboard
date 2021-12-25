@@ -1,4 +1,4 @@
-# OSkeyboard: On screen keyboard framework, implementation, and module, using p5js (ok i know Ronak doesnt like that)
+# OSkeyboard: On screen keyboard framework, implementation, and module, using p5js (ok i know Ronak doesnt like that lol)
 
 ## Main features:
   - fully positionable and sizable
