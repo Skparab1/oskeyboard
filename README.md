@@ -37,7 +37,7 @@
 ## Module (doesn't work yet)
   - importing with js
   ```` '
-  import {oskeyboard} from '.oskeyboard.js'
+  import {oskeyboard} from '.oskeyboard.js';
   ````
   - inc;uding as a module in HTML
   
@@ -48,11 +48,14 @@
   - usage
     - to invoke or revoke
       ````
-      oskeyboard.invoke()
+      oskeyboard.invoke();
       ````
       ````
-      oskeyboard.revoke()
+      oskeyboard.revoke();
       ````
-    
+    - to set color (as an array)
+      ````
+      oskeyboard.setcolor([200,100,0]);
+      ````
 
     
