@@ -15,3 +15,5 @@
     - re-renders only when key is pressed or mouse is pressed
   - designed to replicate standard keyboard
     - oskeyboard is nearly identical to a regular keyboard, except for a few thoguhtful additions
+  - active mouse position checker
+    - actively stores mouse coordinates when clicked to avoud delay when oskey is pressed by mouse
