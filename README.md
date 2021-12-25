@@ -11,6 +11,9 @@
     - light up oskeyboard when keys are pressed
     - can control shift key of oskeyboard
     - can control capslock key (for turning on, i havn't figured out the off part
+
+  ![](media/keyboard_link.gif)
+
   - color customizable (currect webpage uses random colors on each reload)
   - shift and capslock implementation
     - changes characters on keyboard display
