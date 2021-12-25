@@ -13,3 +13,5 @@
     - changes characters on keyboard display
   - optimized for fast performance
     - re-renders only when key is pressed or mouse is pressed
+  - designed to replicate standard keyboard
+    - oskeyboard is nearly identical to a regular keyboard, except for a few thoguhtful additions
