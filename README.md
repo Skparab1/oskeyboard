@@ -5,4 +5,4 @@
     - takes coordinates as parameters, and repositions keyboard and keys
     - takes size as parameter and resizes all keys based on proportion and position
   - compatible with standard keyboard inputs
-    - 
+    - light up when keys are pressed
