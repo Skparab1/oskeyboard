@@ -1,4 +1,4 @@
-# OSkeyboard: On screen keyboard framework, implementation, and module
+# OSkeyboard: On screen keyboard framework, implementation, and module, using p5js (ok i know Ronak doesnt like that)
 
 ## Main features:
   - fully positionable and sizable
@@ -39,7 +39,7 @@
   ```` '
   import {oskeyboard} from '.oskeyboard.js';
   ````
-  - inc;uding as a module in HTML
+  - including as a module in HTML
   
   ````
   <script type="module" src="oskeyboard.js"></script>
