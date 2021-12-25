@@ -4,6 +4,9 @@
   - fully positionable and sizable
     - takes coordinates as parameters, and repositions keyboard and keys
     - takes size as parameter and resizes all keys based on proportion and position
+   
+   ![](media/keyboard_enlarging.gif)
+   
   - compatible with standard keyboard inputs
     - light up oskeyboard when keys are pressed
     - can control shift key of oskeyboard
